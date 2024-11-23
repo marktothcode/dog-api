@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2px hsla(0, 0%, 0%, 0.8);
+  box-shadow: 0 0 0 2px hsla(0, 0%, 0%, 0.8);
+}
+
+.search-result p:before {
+  background: url(/src/assets/Search_Icon.svg);
+  position: relative;
+  display: inline-block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
