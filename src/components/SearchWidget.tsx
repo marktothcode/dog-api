@@ -47,19 +47,21 @@ function SearchWidget() {
 
   return (
     <div className="search-widget block max-w-7xl w-full mx-auto my-0">
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className="search-widget__inner">
-          <Header />
-          <SearchForm handleChange={handleChange} />
-          <SearchResults
-            filteredBreeds={filteredBreeds}
-            getDogData={getDogData}
-          />
-          <ImageContainer randomImage={randomImage} />
-        </div>
-      )}
+      <div className="search-widget__inner">
+        <Header />
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            <SearchForm handleChange={handleChange} />
+            <SearchResults
+              filteredBreeds={filteredBreeds}
+              getDogData={getDogData}
+            />
+            <ImageContainer randomImage={randomImage} />
+          </>
+        )}
+      </div>
     </div>
   );
 }
