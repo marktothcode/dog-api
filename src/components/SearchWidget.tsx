@@ -49,17 +49,15 @@ function SearchWidget() {
     <div className="search-widget block max-w-7xl w-full mx-auto my-0">
       <div className="search-widget__inner">
         <Header />
+        <SearchForm handleChange={handleChange} />
+        <SearchResults
+          filteredBreeds={filteredBreeds}
+          getDogData={getDogData}
+        />
         {isLoading ? (
-          <p>Loading...</p>
+          <p className="w-11/12 md:w-2/4 lg:w-96 mx-auto my-2">Loading...</p>
         ) : (
-          <>
-            <SearchForm handleChange={handleChange} />
-            <SearchResults
-              filteredBreeds={filteredBreeds}
-              getDogData={getDogData}
-            />
-            <ImageContainer randomImage={randomImage} />
-          </>
+          <ImageContainer randomImage={randomImage} />
         )}
       </div>
     </div>
